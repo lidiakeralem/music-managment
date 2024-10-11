@@ -1,32 +1,19 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import Home from './pages/Home';
-import Navbar from './Components/Navbar';
-// import { WorkoutsContextProvider } from './context/WorkoutContext';
+import React from 'react';
+import { Provider } from 'react-redux';
+import store from './store';
+import Home from './pages/Home'; 
 
-// Create the router using createBrowserRouter
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: (
-      <>
-        {/* <WorkoutsContextProvider> */}
-        <Navbar />
-        <div className="pages">
-          <Home />
-        </div>
-        {/* </WorkoutsContextProvider> */}
-      </>
-    ),
-  },
-]);
-
-function App() {
-  return (
-    <div className="App">
-      {/* Use RouterProvider to provide the router to the application */}
-      <RouterProvider router={router} />
-    </div>
-  );
-}
+const App = () => {
+    return (
+        <Provider store={store}>
+            <div>
+                <h1>Songs Management System</h1>
+                <Home />
+            </div>
+        </Provider>
+    );
+};
 
 export default App;
+
+
