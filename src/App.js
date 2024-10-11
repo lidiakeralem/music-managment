@@ -7,7 +7,7 @@ const App = () => {
     return (
         <Provider store={store}>
             <div>
-                <h1>Songs Management System</h1>
+                <h1>Song Management System</h1>
                 <Home />
             </div>
         </Provider>
